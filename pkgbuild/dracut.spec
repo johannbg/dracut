@@ -269,7 +269,7 @@ echo 'dracut_rescue_image="yes"' > $RPM_BUILD_ROOT%{dracutlibdir}/dracut.conf.d/
 
 %files
 %if %{with doc}
-%doc README.md docs/HACKING.md AUTHORS NEWS.md dracut.html dracut.png dracut.svg
+%doc README.md docs/HACKING.md AUTHORS NEWS.md dracut.html docs/dracut.png docs/dracut.svg
 %endif
 %{!?_licensedir:%global license %%doc}
 %license COPYING lgpl-2.1.txt
@@ -328,13 +328,17 @@ echo 'dracut_rescue_image="yes"' > $RPM_BUILD_ROOT%{dracutlibdir}/dracut.conf.d/
 %{dracutlibdir}/modules.d/01systemd-coredump
 %{dracutlibdir}/modules.d/01systemd-hostnamed
 %{dracutlibdir}/modules.d/01systemd-initrd
+%{dracutlibdir}/modules.d/01systemd-journald
+%{dracutlibdir}/modules.d/01systemd-ldconfig
 %{dracutlibdir}/modules.d/01systemd-modules-load
 %{dracutlibdir}/modules.d/01systemd-repart
 %{dracutlibdir}/modules.d/01systemd-resolved
+%{dracutlibdir}/modules.d/01systemd-rfkill
 %{dracutlibdir}/modules.d/01systemd-sysctl
 %{dracutlibdir}/modules.d/01systemd-sysusers
 %{dracutlibdir}/modules.d/01systemd-timedated
 %{dracutlibdir}/modules.d/01systemd-timesyncd
+%{dracutlibdir}/modules.d/01systemd-tmpfiles
 %{dracutlibdir}/modules.d/01systemd-udevd
 %{dracutlibdir}/modules.d/01systemd-veritysetup
 %{dracutlibdir}/modules.d/03modsign
